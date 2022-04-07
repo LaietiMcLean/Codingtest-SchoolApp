@@ -1,71 +1,28 @@
 {
   "students": [
-      {
-        "id": 1,
-        "course": 1
-      },
-      {
-        "id": 6,
-        "course": 2
-      }
-  ],
-
-  "mark": [
-      {
-        "subject": 1,
-        "student": 1,
-        "grade": 5.8
-      },
-      {
-        "subject": 1,
-        "student": 6,
-        "grade": 10
-      },
-      {
-        "subject": 2,
-        "student": 1,
-        "grade": 3
-      },
-      {
-        "subject": 2,
-        "student": 6,
-        "grade": 2
-      },
-      {
-        "subject": 3,
-        "student": 6,
-        "grade": 2.9
-      }
-  ],
-
-  "subject": [
-      {
-        "id": 1,
-        "name": "Matemáticas 1",
-        "lenguaje": "Castellano"
-      },
-      {
-        "id": 2,
-        "name": "Lengua Castellana",
-        "lenguaje": "Castellano"
-      },
-      {
-        "id": 3,
-        "name": "Inglés",
-        "lenguaje": "English"
-      }
-  ],
-
-  "user": [
-      {
-        "id": 1,
-        "email": "rafaelordonezmolina@gmail.com",
-        "full_name": "Rafael Ordonez"
-      },
-      {
-        "id": 6,
-        "email": "klever@gmail.com",
-        "full_name": "Klever"
-      }
+    {
+      "id": "rafael",
+      "course": 1,
+      "email": "rafaelordonezmolina@gmail.com",
+      "full_name": "Rafael Ordonez",
+      "subject1": "Matemáticas 1",
+      "grade1": 5.8,
+      "subject2": "Lengua Castellana",
+      "grade2": 3,
+      "subject3": "Inglés",
+      "grade3": 2.9
+    },
+    {
+      "id": "klever",
+      "course": 2,
+      "email": "klever@gmail.com",
+      "full_name": "Klever",
+      "subject1": "Matemáticas 1",
+      "grade1": 10,
+      "subject2": "Lengua Castellana",
+      "grade2": 2,
+      "subject3": "Inglés",
+      "grade3": 5
+    }
   ]
 }
