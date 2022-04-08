@@ -12,7 +12,9 @@ import { StudentsComponent } from './pages/students/students.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListComponent } from './pages/list/list.component';
 import { StudentsCardComponent } from './components/students-card/students-card.component';
+import { ImagePipe } from './pipes/image.pipe';
 
+ImagePipe
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { StudentsCardComponent } from './components/students-card/students-card.
     StudentsComponent,
     HomeComponent,
     ListComponent,
-    StudentsCardComponent
+    StudentsCardComponent,
+    ImagePipe
   ],
   imports: [
     CommonModule,

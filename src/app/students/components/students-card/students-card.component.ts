@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { Student } from './../../interfaces/students.interface';
 
 @Component({
   selector: 'app-students-card',
   templateUrl: './students-card.component.html',
-  styles: [
+  styles: [ `
+    mat-card {
+      margin-top: 20px
+    }
+  `
   ]
 })
-export class StudentsCardComponent implements OnInit {
+export class StudentsCardComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  @Input() students!: Student;
 
 }

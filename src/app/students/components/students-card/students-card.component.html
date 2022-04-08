@@ -1,1 +1,20 @@
-<p>students-card works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{students.full_name}}</mat-card-title>
+    <mat-card-subtitle>{{students.email}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-md-image [src]="students | image">
+
+  <mat-card-content>
+    <h3>Student of: {{students.course}} course</h3>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-stroked-button color="basic">
+      More details...
+    </button>
+    <button mat-flat-button color="primary">
+      Edit
+    </button>
+  </mat-card-actions>
+</mat-card>

@@ -1,13 +1,21 @@
 <p>Student's List</p>
 <mat-divider></mat-divider>
 
-<mat-card *ngFor="let student of students">
-  <mat-card-header>
-    <mat-card-title>{{student.full_name}}</mat-card-title>
-    <mat-card-subtitle>{{student.email}}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-md-image src="assets/{{student.id}}.png">
 
-  <mat-card-content>
-    <h3>Student of: {{student.course}} course</h3>
-  </mat-card-content>
+
+<div fxLayout="row wrap"
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="5rem"
+     *ngFor="let student of students">
+
+  <div fxFlex="30"
+       fxFlex.md="40"
+       fxFlex.sm="60"
+       >
+
+     <app-students-card [students]="student"></app-students-card>
+
+    </div>
+
+</div>
