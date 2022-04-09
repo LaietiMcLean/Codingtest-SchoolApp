@@ -15,4 +15,8 @@ export class StudentsService {
     return this.http.get<Student[]>('http://localhost:3000/students')
   }
 
+  getStudentsById(id: string): Observable<Student> {
+    return this.http.get<Student>(`http://localhost:3000/students/${id}`);
+  }
+
 }

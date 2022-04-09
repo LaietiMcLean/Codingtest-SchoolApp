@@ -1,1 +1,71 @@
-<p>students works!</p>
+<mat-grid-list
+  cols="1"
+  *ngIf="!students; else divStudents"
+  >
+  <mat-grid-tile>
+    <mat-spinner></mat-spinner>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #divStudents>
+  <div
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutGap="20px"
+  >
+
+    <div
+      fxFlex="50"
+      fxFlexAlign="center"
+    >
+      <h1>{{students.full_name}}</h1>
+      <mat-divider></mat-divider>
+      <br>
+      <img [src]="students | image" alt="image">
+    </div>
+
+    <div
+    fxFlex="50"
+    fxFlexAlign="center"
+    class="container"
+    >
+      <div class="table-responsive table-responsive-sm">
+        <table class="table table-dark table-sm table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Subject</th>
+              <th scope="col">Mark</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>{{students.subject1}}</td>
+              <td>{{students.grade1}}</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>{{students.subject2}}</td>
+              <td>{{students.grade2}}</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>{{students.subject3}}</td>
+              <td>{{students.grade3}}</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button
+        mat-button
+        color="basic"
+        (click)="back()"
+        >
+        Back
+      </button>
+    </div>
+  </div>
+</ng-template>

@@ -10,10 +10,18 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-stroked-button color="basic">
+    <button
+      mat-stroked-button
+      color="basic"
+      [routerLink]="['/students', students.id]"
+      >
       More details...
     </button>
-    <button mat-flat-button color="primary">
+    <button
+      mat-flat-button
+      color="primary"
+      [routerLink]="['/students/edit', students.id]"
+      >
       Edit
     </button>
   </mat-card-actions>
