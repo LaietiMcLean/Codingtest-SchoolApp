@@ -12,8 +12,20 @@ import { Student } from '../../interfaces/students.interface';
     img {
       border-radius: 5%;
     }
+
     .container {
+      margin-left: 5rem;
       margin-top: 5rem;
+      text-align-last: center;
+    }
+
+    .grade-container {
+      margin-top: 2rem;
+      text-align-last: center;
+
+    }
+    button {
+      margin-top: 2rem;
     }
   `
   ]

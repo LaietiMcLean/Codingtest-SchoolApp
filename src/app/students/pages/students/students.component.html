@@ -11,9 +11,9 @@
   <div
     fxLayout="row"
     fxLayout.xs="column"
-    fxLayoutGap="20px"
+    fxLayoutGap="30px"
+    class="container"
   >
-
     <div
       fxFlex="50"
       fxFlexAlign="center"
@@ -27,11 +27,13 @@
     <div
     fxFlex="50"
     fxFlexAlign="center"
-    class="container"
+    class="grade-container"
     >
+    <h1>Grade</h1>
+
       <div class="table-responsive table-responsive-sm">
-        <table class="table table-dark table-sm table-hover">
-          <thead>
+        <table class="table table-light table-borderless table-sm table-hover">
+          <thead class="table-dark">
             <tr>
               <th scope="col">#</th>
               <th scope="col">Subject</th>
@@ -60,7 +62,7 @@
       </div>
 
       <button
-        mat-button
+        mat-stroked-button
         color="basic"
         (click)="back()"
         >
