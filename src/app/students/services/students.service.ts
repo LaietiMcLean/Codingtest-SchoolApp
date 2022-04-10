@@ -36,4 +36,8 @@ export class StudentsService {
     return this.http.put<Student>(`${this.baseUrl}/students/${students.id}`, students);
   }
 
+  deleteStudent(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/students/${id}`);
+  }
+
 }

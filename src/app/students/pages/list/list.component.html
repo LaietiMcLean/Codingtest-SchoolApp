@@ -1,21 +1,20 @@
 <p>Students List</p>
 <mat-divider></mat-divider>
-
-
+<br>
 
 <div fxLayout="row wrap"
      fxLayout.xs="column"
-     fxLayoutAlign="center"
      fxLayoutGap="5rem"
-     *ngFor="let student of students">
+     >
 
-  <div fxFlex="30"
-       fxFlex.md="40"
-       fxFlex.sm="60"
+      <div fxFlex="20"
+       fxFlex.md="30"
+       fxFlex.sm="40"
+       *ngFor="let student of students"
        >
 
      <app-students-card [students]="student"></app-students-card>
 
-    </div>
+  </div>
 
 </div>

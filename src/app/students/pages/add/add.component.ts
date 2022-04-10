@@ -50,6 +50,21 @@ export class AddComponent implements OnInit {
     }
   ];
 
+  subjects = [
+    {
+      id: 'Matemáticas 1',
+      subject: 'Matemáticas 1'
+    },
+    {
+      id: 'Lengua Castellana',
+      subject: 'Lengua Castellana'
+    },
+    {
+      id: 'Inglés',
+      subject: 'Inglés'
+    }
+  ]
+
   students: Student = {
     full_name: '',
     email: '',
@@ -103,5 +118,13 @@ export class AddComponent implements OnInit {
   back() {
     this.router.navigate(['/students/list']);
   }
+
+  remove() {
+    this.studentsService.deleteStudent(this.students.id!)
+        .subscribe(resp => {
+          this.router.navigate(['/students']);
+        });
+  }
+
 
 }

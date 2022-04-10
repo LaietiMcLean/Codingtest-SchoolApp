@@ -61,6 +61,92 @@
           >
       </mat-form-field>
     <br>
+
+
+
+
+
+
+    <div fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutGap="20px"
+    >
+        <mat-form-field fxFlex="100">
+        <mat-label>Subject 1</mat-label>
+        <mat-select  [(ngModel)]="students.subject1"
+            >
+                <mat-option *ngFor="let subject of subjects"
+                            [value]="subject.id"
+                            class="option"
+                >
+                  {{subject.subject}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100">
+          <mat-label>Grade</mat-label>
+            <input matInput
+            type="number"
+            [(ngModel)]="students.grade1"
+            >
+        </mat-form-field>
+    </div>
+
+    <div fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutGap="20px"
+    >
+        <mat-form-field fxFlex="100">
+        <mat-label>Subject 2</mat-label>
+          <mat-select  [(ngModel)]="students.subject2"
+          >
+            <mat-option *ngFor="let subject of subjects"
+              [value]="subject.id"
+              class="option"
+            >
+            {{subject.subject}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100">
+          <mat-label>Grade</mat-label>
+            <input matInput
+            type="text"
+            [(ngModel)]="students.grade2"
+            >
+        </mat-form-field>
+    </div>
+
+    <div fxLayout="row"
+    fxLayout.xs="column"
+    fxLayoutGap="20px"
+    >
+        <mat-form-field fxFlex="100">
+        <mat-label>Subject 3</mat-label>
+          <mat-select  [(ngModel)]="students.subject3"
+          >
+            <mat-option *ngFor="let subject of subjects"
+                [value]="subject.id"
+                class="option"
+            >
+            {{subject.subject}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100">
+        <mat-label>Grade</mat-label>
+        <input matInput
+        type="text"
+        [(ngModel)]="students.grade3"
+        >
+        </mat-form-field>
+    </div>
+
+
+
     <div fxFLex="50">
       <img mat-card-md-image
            [src]="students | image"
@@ -68,6 +154,7 @@
     </div>
     <br>
     <mat-card-actions>
+
       <button mat-raised-button
               color="primary"
               (click)="save()"
@@ -75,6 +162,7 @@
         <mat-icon>cached</mat-icon>
         Save changes
       </button>
+
       <button mat-raised-button
               color="primary"
               (click)="create()"
@@ -82,13 +170,25 @@
         <mat-icon>check_circle_outline</mat-icon>
         Create new one
       </button>
+
+      <button *ngIf="students.id"
+              mat-raised-button
+              color="primary"
+              (click)="remove()"
+      >
+        <mat-icon>remove</mat-icon>
+        Delete
+      </button>
+
       <button
       mat-stroked-button
       color="basic"
       (click)="back()"
       >
       Back
-    </button>
+      </button>
+
+
     </mat-card-actions>
   </div>
 
