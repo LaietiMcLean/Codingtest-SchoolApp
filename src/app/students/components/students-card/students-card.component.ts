@@ -6,6 +6,11 @@ import { Student } from './../../interfaces/students.interface';
   selector: 'app-students-card',
   templateUrl: './students-card.component.html',
   styles: [ `
+
+    img {
+      border-radius: 5%;
+    }
+
     button {
       margin: 0 1rem;
     }

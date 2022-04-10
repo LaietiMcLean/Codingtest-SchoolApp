@@ -1,1 +1,95 @@
-<p>add works!</p>
+<h1>Edit or Add new Student</h1>
+
+<div fxLayout="row"
+     fxLayoutGap="40px"
+     fxLayout.xs="column">
+
+  <div fxFLex="50"
+       fxLayout="column">
+
+    <div fxLayout="row"
+         fxLayout.xs="column"
+         fxLayoutGap="20px"
+    >
+        <mat-form-field fxFlex="100">
+          <mat-label>Student | id</mat-label>
+          <input matInput
+                type="text"
+                [(ngModel)]="students.id"
+                required
+          >
+        </mat-form-field>
+
+        <mat-form-field fxFlex="100">
+          <mat-label>Course</mat-label>
+            <mat-select  [(ngModel)]="students.course"
+                        required
+            >
+                <mat-option *ngFor="let course of courses"
+                            [value]="course.id"
+                            class="option"
+                >
+                  {{course.course}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+      <mat-form-field fxFlex="100">
+        <mat-label>Full Name</mat-label>
+          <input matInput
+                type="text"
+                [(ngModel)]="students.full_name"
+                required
+          >
+      </mat-form-field>
+
+      <mat-form-field fxFlex="100">
+          <mat-label>Email</mat-label>
+            <input matInput
+                  type="text"
+                  [(ngModel)]="students.email"
+                  required
+            >
+      </mat-form-field>
+
+      <mat-form-field fxFlex="100">
+          <mat-label>Photo</mat-label>
+          <input matInput
+                type="url"
+                [(ngModel)]="students.alt_img"
+          >
+      </mat-form-field>
+    <br>
+    <div fxFLex="50">
+      <img mat-card-md-image
+           [src]="students | image"
+      >
+    </div>
+    <br>
+    <mat-card-actions>
+      <button mat-raised-button
+              color="primary"
+              (click)="save()"
+      >
+        <mat-icon>cached</mat-icon>
+        Save changes
+      </button>
+      <button mat-raised-button
+              color="primary"
+              (click)="create()"
+      >
+        <mat-icon>check_circle_outline</mat-icon>
+        Create new one
+      </button>
+      <button
+      mat-stroked-button
+      color="basic"
+      (click)="back()"
+      >
+      Back
+    </button>
+    </mat-card-actions>
+  </div>
+
+</div>

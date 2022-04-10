@@ -7,6 +7,7 @@ export interface Student {
   course:    number;
   email:     string;
   full_name: string;
+  alt_img?:  string;
   subject1:  string;
   grade1:    number;
   subject2:  string;

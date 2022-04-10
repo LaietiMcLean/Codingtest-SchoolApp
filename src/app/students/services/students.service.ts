@@ -28,4 +28,12 @@ export class StudentsService {
     return this.http.get<Student[]>(`${this.baseUrl}/students?q=${term}`);
   }
 
+  addStudent(students: Student): Observable<Student> {
+    return this.http.post<Student>(`${this.baseUrl}/students`, students);
+  }
+
+  editStudent(students: Student): Observable<Student> {
+    return this.http.put<Student>(`${this.baseUrl}/students/${students.id}`, students);
+  }
+
 }

@@ -7,7 +7,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ImagePipe implements PipeTransform {
 
   transform( students: Student ): string {
-    return `assets/${ students.id }.png`;
+
+    if(!students.id && !students.alt_img) {
+      return 'assets/nouser.png'
+    } else if (students.alt_img) {
+      return students.alt_img;
+    } else {
+      return `assets/${ students.id }.png`;
+    }
   }
 
 }
