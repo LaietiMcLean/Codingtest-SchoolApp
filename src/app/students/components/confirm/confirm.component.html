@@ -1,0 +1,20 @@
+<h1>Sure?</h1>
+<hr>
+<p>You are about to delete {{data.id}}
+<br>
+Do you want to continue?
+</p>
+
+<div>
+  <button
+      mat-button (click)="remove()"
+  >
+  Yes, I'm sure
+  </button>
+
+  <button
+      mat-button (click)="close()"
+  >
+  Cancel
+  </button>
+</div>

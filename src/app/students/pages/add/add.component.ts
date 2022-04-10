@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute, Router } from '@angular/router';
-import { switchMap } from 'rxjs';
+
 import { Student } from './../../interfaces/students.interface';
 import { StudentsService } from './../../services/students.service';
+import { switchMap } from 'rxjs';
+
+import { ConfirmComponent } from './../../components/confirm/confirm.component';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -81,7 +87,9 @@ export class AddComponent implements OnInit {
 
   constructor(private studentsService: StudentsService,
               private activatedRoute: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private snakBar: MatSnackBar,
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -103,7 +111,7 @@ export class AddComponent implements OnInit {
 
     if (this.students.id) {
       this.studentsService.editStudent(this.students)
-          .subscribe(students => console.log('Editing', students))
+          .subscribe(students => this.showSnakBar('Student edited'))
     }
 
   }
@@ -111,7 +119,7 @@ export class AddComponent implements OnInit {
   create() {
     if(this.students.id) {
       this.studentsService.addStudent(this.students)
-          .subscribe(students => console.log('Subscribing', students))
+          .subscribe(students => this.showSnakBar('Student created'))
     }
   }
 
@@ -120,11 +128,28 @@ export class AddComponent implements OnInit {
   }
 
   remove() {
-    this.studentsService.deleteStudent(this.students.id!)
-        .subscribe(resp => {
-          this.router.navigate(['/students']);
+
+    const dialog = this.dialog.open(ConfirmComponent, {
+      width: '300px',
+      data: this.students
+    })
+
+    dialog.afterClosed().subscribe(
+      (result) => {
+        if (result) {
+          this.studentsService.deleteStudent(this.students.id!)
+            .subscribe(resp => {
+                this.router.navigate(['/students']);
         });
+        }
+      }
+    )
   }
 
+  showSnakBar(message: string) {
+    this.snakBar.open(message, 'OK!', {
+      duration: 2500
+    })
+  }
 
 }
