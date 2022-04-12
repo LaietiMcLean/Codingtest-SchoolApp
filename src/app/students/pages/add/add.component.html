@@ -1,4 +1,7 @@
-<h1>Edit or Add new Student</h1>
+<h1>
+  <span *ngIf="students.id">Edit student</span>
+  <span *ngIf="!students.id">Add new student</span>
+</h1>
 
 <div fxLayout="row"
      fxLayoutGap="40px"
@@ -11,6 +14,7 @@
          fxLayout.xs="column"
          fxLayoutGap="20px"
     >
+  <!-----------Personal data----------------->
         <mat-form-field fxFlex="100">
           <mat-label>Student | id</mat-label>
           <input matInput
@@ -62,10 +66,7 @@
       </mat-form-field>
     <br>
 
-
-
-
-
+      <!-----------Subjects----------------->
 
     <div fxLayout="row"
     fxLayout.xs="column"
@@ -145,14 +146,15 @@
         </mat-form-field>
     </div>
 
-
-
     <div fxFLex="50">
       <img mat-card-md-image
            [src]="students | image"
       >
     </div>
     <br>
+
+  <!-----------Buttons----------------->
+
     <mat-card-actions>
 
       <button mat-raised-button
@@ -187,7 +189,6 @@
       >
       Back
       </button>
-
 
     </mat-card-actions>
   </div>

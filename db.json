@@ -3,7 +3,7 @@
     {
       "id": "rafael",
       "course": 1,
-      "email": "rafaelordonezmolina@gmail.com",
+      "email": "rafaelnunez@gmail.com",
       "full_name": "Rafael Ordonez",
       "subject1": "Matemáticas 1",
       "grade1": 5.8,
@@ -13,9 +13,9 @@
       "grade3": 2.9
     },
     {
-      "id": "klever",
+      "id": "lucia",
       "course": 2,
-      "email": "klever@gmail.com",
+      "email": "lucia@gmail.com",
       "full_name": "Klever",
       "subject1": "Matemáticas 1",
       "grade1": 10,
